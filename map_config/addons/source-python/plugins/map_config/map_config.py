@@ -7,9 +7,7 @@ from cvars import ConVar
 from events import Event
 from filters.players import PlayerIter
 from filters.weapons import WeaponClassIter
-from engines.server import global_vars
 from listeners import OnServerActivate, OnLevelEnd, OnLevelInit
-from messages import HintText
 from messages import SayText2
 from players.entity import Player
 from weapons.restrictions import WeaponRestrictionHandler
@@ -17,14 +15,12 @@ from weapons.restrictions import WeaponRestrictionHandler
 from .configs import *
 from .info import info
 
-
 ## GLOBALS
 
 restrict_handler = WeaponRestrictionHandler()
 weapon_restrict_ct = []
 weapon_restrict_t = []
 cvar_list = dict()
-
 
 ## UTILS
 
