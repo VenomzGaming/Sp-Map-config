@@ -5,11 +5,9 @@ import re
 from config.manager import ConfigManager
 from cvars import ConVar
 from events import Event
-from filters.players import PlayerIter
 from filters.weapons import WeaponClassIter
 from listeners import OnServerActivate, OnLevelEnd, OnLevelInit
 from messages import SayText2
-from players.entity import Player
 from weapons.restrictions import WeaponRestrictionHandler
 
 from .configs import *
@@ -75,11 +73,8 @@ def set_cvar_value(cvar):
 
 @OnLevelInit
 def _on_map_start(map_name):
-    restrict_handler.remove_team_restrictions(3, *_all_weapons)
-    restrict_handler.remove_team_restrictions(2, *_all_weapons)
-
-    weapon_restrict_ct = []
-    weapon_restrict_t = []
+    weapon_restrict_t.clear()
+    weapon_restrict_ct.clear()
     g_configs_map.clear()
     cvar_list.clear()
 
