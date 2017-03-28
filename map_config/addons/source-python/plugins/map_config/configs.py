@@ -2,7 +2,6 @@
 
 from config.manager import ConfigManager
 from filters.weapons import WeaponClassIter
-from paths import CFG_PATH
 from translations.strings import LangStrings
 
 from .info import info
@@ -10,9 +9,7 @@ from .info import info
 ## ALL DECLARATION
 
 __all__ = (
-    '_weapons',
     '_all_weapons',
-    'CONFIG_PATH',
     'g_configs',
     'g_configs_map',
 )
@@ -25,7 +22,6 @@ _weapons = [
 
 _all_weapons = set(weapon.name for weapon in WeaponClassIter())
 
-CONFIG_PATH = CFG_PATH / 'map_config'
 g_configs = dict()
 g_configs_map = dict()
 

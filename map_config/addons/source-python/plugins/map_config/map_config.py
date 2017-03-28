@@ -8,13 +8,15 @@ from events import Event
 from filters.weapons import WeaponClassIter
 from listeners import OnServerActivate, OnLevelEnd, OnLevelInit
 from messages import SayText2
+from paths import CFG_PATH
 from weapons.restrictions import WeaponRestrictionHandler
 
-from .configs import *
+from .configs import _all_weapons, g_configs, g_configs_map
 from .info import info
 
 ## GLOBALS
 
+CONFIG_PATH = CFG_PATH / 'map_config'
 restrict_handler = WeaponRestrictionHandler()
 weapon_restrict_ct = []
 weapon_restrict_t = []
